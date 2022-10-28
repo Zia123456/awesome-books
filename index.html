@@ -8,13 +8,22 @@
     <title>Awesome Books</title>
   </head>
   <body>
+    <nav class="nav-container">
+      <div class="sub-nav-left">
+        <h1 class="title-text">Awesome Books</h1>
+        <p class="list-text">List</p>
+      </div>
+      <div class="sub-nav-right">
+        <p class="add-new-text deactive">Add new</p>
+        <p class="contact-text deactive">Contact</p>
+      </div>
+    </nav>
+
     <div class="container">
-      <h1 class="awesome-books-text">Awesome books</h1>
+      <h1 class="awesome-books-text">All awesome books</h1>
       <div class="books-container"></div>
 
-      <form class="add-book-container">
-        <hr class="short-line" />
-        <h2>Add a new book</h2>
+      <form class="add-book-container hide">
         <input
           type="text"
           class="title"
@@ -33,7 +42,24 @@
         <br /><br />
         <button type="submit" class="add">Add</button>
       </form>
+
+      <div class="contact-container hide">
+        <p class="question">
+          Do have any question or you just want to say "Hello"?
+        </p>
+        <p>you can reach out to us!</p>
+
+        <ul class="contact-list-container">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Streetname 22, 84503 City, Country</li>
+        </ul>
+      </div>
     </div>
+
+    <footer>
+      <p class="copyright">Copyright ...</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
