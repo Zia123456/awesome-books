@@ -44,6 +44,7 @@ class features {
   }
 
   static displayBooks() {
+    container.innerHTML = '';
     const books = JSON.parse(localStorage.getItem('awesome-books'));
     for (let i = 0; i < books.length; i += 1) {
       const div = document.createElement('div');
@@ -79,7 +80,7 @@ class features {
       removeButton.onclick = () => {
         features.removeBook(i);
         // eslint-disable-next-line no-restricted-globals
-        location.reload();
+        features.displayBooks();
       };
 
       div.appendChild(textDiv);
@@ -90,10 +91,10 @@ class features {
 
 // js to add event to aadBook and prevent default
 form.addEventListener('click', (event) => {
-  if (bookTitle.value !== null || bookAuthor.value !== null) {
-    addBook.addEventListener('click', features.addNewBook);
-  } else {
+  if (bookTitle.value == null || bookAuthor.value == null) {
     event.preventDefault();
+  } else {
+    addBook.addEventListener('click', features.addNewBook);
   }
 });
 
