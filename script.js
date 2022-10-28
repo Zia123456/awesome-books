@@ -100,3 +100,49 @@ form.addEventListener('click', (event) => {
 
 // js to invoke displayBooks function
 window.addEventListener('DOMContentLoaded', features.displayBooks);
+
+// js to make web page single page application
+// js to access html elements
+const bookContainer = document.querySelector('.books-container');
+const contactContainer = document.querySelector('.contact-container');
+const list = document.querySelector('.list-text');
+const addNew = document.querySelector('.add-new-text');
+const contact = document.querySelector('.contact-text');
+const pageTitle = document.querySelector('.awesome-books-text');
+
+// functions
+function displayList() {
+  bookContainer.classList.remove('hide');
+  list.classList.remove('deactive');
+  bookContainer.classList.add('books-container');
+  form.classList.add('hide');
+  addNew.classList.add('deactive');
+  contactContainer.classList.add('hide');
+  contact.classList.add('deactive');
+  pageTitle.innerHTML = 'All awesome books';
+}
+list.addEventListener('click', displayList);
+
+function displayAddNew() {
+  bookContainer.classList.add('hide');
+  list.classList.add('deactive');
+  form.classList.remove('hide');
+  addNew.classList.remove('deactive');
+  contactContainer.classList.add('hide');
+  contact.classList.add('deactive');
+  pageTitle.innerHTML = 'Add a new book';
+}
+
+addNew.addEventListener('click', displayAddNew);
+
+function displayContact() {
+  bookContainer.classList.add('hide');
+  list.classList.add('deactive');
+  form.classList.add('hide');
+  addNew.classList.add('deactive');
+  contactContainer.classList.remove('hide');
+  contact.classList.remove('deactive');
+  pageTitle.innerHTML = 'Contact information';
+}
+
+contact.addEventListener('click', displayContact);
